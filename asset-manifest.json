@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/animestreamingapp/static/css/main.9552a744.css",
+    "main.js": "/animestreamingapp/static/js/main.33a434d9.js",
+    "index.html": "/animestreamingapp/index.html",
+    "main.9552a744.css.map": "/animestreamingapp/static/css/main.9552a744.css.map",
+    "main.33a434d9.js.map": "/animestreamingapp/static/js/main.33a434d9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9552a744.css",
+    "static/js/main.33a434d9.js"
+  ]
+}
