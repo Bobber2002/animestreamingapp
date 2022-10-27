@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/animestreamingapp/static/css/main.9552a744.css",
-    "main.js": "/animestreamingapp/static/js/main.7e98418e.js",
-    "index.html": "/animestreamingapp/index.html",
-    "main.9552a744.css.map": "/animestreamingapp/static/css/main.9552a744.css.map",
-    "main.7e98418e.js.map": "/animestreamingapp/static/js/main.7e98418e.js.map"
+    "main.css": "/Bobber2002/animestreamingapp/static/css/main.9552a744.css",
+    "main.js": "/Bobber2002/animestreamingapp/static/js/main.7e98418e.js",
+    "index.html": "/Bobber2002/animestreamingapp/index.html",
+    "main.9552a744.css.map": "/Bobber2002/animestreamingapp/static/css/main.9552a744.css.map",
+    "main.7e98418e.js.map": "/Bobber2002/animestreamingapp/static/js/main.7e98418e.js.map"
   },
   "entrypoints": [
     "static/css/main.9552a744.css",
