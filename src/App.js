@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import AnimePage from "./Pages/Anime/page";
 import SearchPage from "./Pages/Search/page";
 
