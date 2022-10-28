@@ -41,7 +41,7 @@ const SearchPage = ({ setCurrAnime }) => {
   }
   return (
     <>
-      <div id="form_container w-full h-full">
+      <div id="form_container">
         <form action="" onSubmit={handleSearch}>
           <input
             type="text"
