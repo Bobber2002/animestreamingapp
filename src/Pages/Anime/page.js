@@ -16,9 +16,9 @@ const AnimePage = () => {
             searchParams.get("id")
         )
         .then((res) => {
-          console.log(res.data);
+          console.log(res.data.episodes);
           setData(res.data);
-          setEpisodes(res.data.episodes);
+          setEpisodes(res.data.episodes.reverse());
         });
     }
   }, []);
@@ -39,22 +39,19 @@ const AnimePage = () => {
     <div className="flex">
       <div
         id="background"
-        className="h-full w-full bg-cover bg-indigo-900"
-        style={{
-          backgroundImage: `url(${data.animeImg})`,
-        }}
+        className="h-full w-full bg-animeBlack"
+        // style={{
+        //   backgroundImage: `url(${data.animeImg})`,
+        // }}
       >
-        <div className="flex px-24 justify-center h-full w-full backdrop-blur-2xl backdrop-contrast-150 backdrop-brightness-50 backdrop-saturate-[40%]">
+        <div className="flex px-24 justify-center h-full w-full ">
           <div
-            className="py-12 px-12 w-full h-full bg-white bg-opacity-30"
-            style={{
-              boxShadow: "0px 0px 12px 24px rgba(255,255,255,0.3)",
-            }}
+            className="py-12 px-12 w-full h-full bg-animeBlack"
           >
             <div className="flex justify-between px-4">
-              <h1 className="text-3xl">{data.animeTitle}</h1>
+              <h1 className="text-3xl text-animeDarkGreen">{data.animeTitle}</h1>
               <Link to="/">
-                <button className="bg-gray-400 bg-opacity-90 text-center rounded-md py-2">
+                <button className="bg-transparent text-center p-2 border-2 border-animeLightGreen text-animeDarkGreen">
                   Back to search
                 </button>
               </Link>
@@ -72,7 +69,7 @@ const AnimePage = () => {
                     id={episode.episodeId}
                     key={episode.episodeId}
                     onClick={handleClickEpisode}
-                    className="bg-gray-400 bg-opacity-90 text-center rounded-md py-2"
+                    className="bg-transparent text-center text-animeDarkGreen p-2 border-animeLightGreen border-2"
                   >
                     {episode.epNum}
                   </div>
