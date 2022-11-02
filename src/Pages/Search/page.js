@@ -1,7 +1,9 @@
 ﻿import axios from "axios";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
+import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
+import loadingLottie from "../../lib/lotties/lf30_editor_ehobeyri.json";
 
 const SearchPage = ({ setCurrAnime }) => {
   const [data, setData] = useState([]);
@@ -22,12 +24,13 @@ const SearchPage = ({ setCurrAnime }) => {
         .then((res) => {
           console.log(res);
           setData(res.data);
+          setSearching(false);
         });
     }
   }
 
   function handleScrollTo() {
-    document.getElementById("videos_container").style.display = "grid";
+    document.getElementById("videos_container").style.display = "flex";
     document
       .getElementById("videos_container")
       .scrollIntoView({ behavior: "smooth" });
@@ -79,36 +82,50 @@ const SearchPage = ({ setCurrAnime }) => {
       </div>
       <div
         id="videos_container"
-        className="h-screen w-full p-6 hidden grid-cols-4 gap-y-10 justify-items-center"
+        className="hidden h-screen w-full justify-center items-center"
       >
-        {data.map((anime) => {
-          return (
-            <Link to={"/anime?id=" + anime.animeId}>
-              <div
-                id={anime.animeId}
-                className="w-[20vw] h-[25vw] bg-transparent border-2 border-animeLightGreen flex items-center flex-col gap-3"
-                onMouseEnter={handleStopScroll}
-                onMouseLeave={handleStartScroll}
-              >
-                <div className="flex-grow w-full">
+        {searching ? (
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData: loadingLottie,
+            }}
+            height={400}
+            width={400}
+          />
+        ) : (
+          <div className="h-full w-full p-6 grid grid-cols-2 md:grid-cols-4 gap-y-10 justify-items-center">
+            {data.map((anime) => {
+              return (
+                <Link to={"/anime?id=" + anime.animeId} key={anime.animeId}>
                   <div
-                    alt=""
-                    className="w-full h-2/3 bg-contain bg-no-repeat bg-center"
-                    style={{
-                      backgroundImage: `url(${anime.animeImg})`,
-                    }}
-                  />
-                  <div className="w-full px-2 pt-5 text-center text-animeDarkGreen">
-                    <Marquee gradient={false} speed={20} className="w-full">
-                      {anime.animeTitle + "⠀⠀⠀"}
-                    </Marquee>
-                    <p className="pt-4">{anime.status}</p>
+                    id={anime.animeId}
+                    className="w-[35vw] md:w-[20vw] h-[50vw] md:h-[25vw] bg-transparent border-2 border-animeLightGreen flex items-center flex-col gap-3"
+                    onMouseEnter={handleStopScroll}
+                    onMouseLeave={handleStartScroll}
+                  >
+                    <div className="flex-grow w-full">
+                      <div
+                        alt=""
+                        className="w-full h-2/3 bg-contain bg-no-repeat bg-center"
+                        style={{
+                          backgroundImage: `url(${anime.animeImg})`,
+                        }}
+                      />
+                      <div className="w-full px-2 md:pt-5 text-center text-animeDarkGreen">
+                        <Marquee gradient={false} speed={20} className="w-full">
+                          {anime.animeTitle + "⠀⠀⠀"}
+                        </Marquee>
+                        <p className="pt-4">{anime.status}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </div>
     </main>
   );

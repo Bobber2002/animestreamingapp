@@ -44,9 +44,9 @@ const AnimePage = () => {
         //   backgroundImage: `url(${data.animeImg})`,
         // }}
       >
-        <div className="flex px-24 justify-center h-full w-full ">
+        <div className="flex md:px-24 justify-center h-full w-full ">
           <div
-            className="py-12 px-12 w-full h-full bg-animeBlack"
+            className="py-12 px-12 w-full h-full bg-transparent"
           >
             <div className="flex justify-between px-4">
               <h1 className="text-3xl text-animeDarkGreen">{data.animeTitle}</h1>
@@ -62,7 +62,7 @@ const AnimePage = () => {
               controls={true}
               src={episodeURL}
             ></ReactHlsPlayer>
-            <div className="grid grid-cols-12 gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-12 gap-4">
               {episodes.map((episode) => {
                 return (
                   <div

@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Share Tech', sans-serif;
-
+  font-family: "Share Tech", sans-serif;
 }
 
 body {
@@ -21,30 +20,18 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0.25em;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: linear-gradient(
-    rgba(110, 115, 116, 1) 0%,
-    rgba(60, 56, 71, 1) 15%,
-    rgba(60, 56, 71, 1) 85%,
-    rgba(110, 115, 116, 1) 100%
-  );
+  background: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    0deg,
-    rgba(60, 56, 71, 1) 0%,
-    rgba(110, 115, 116, 1) 50%,
-    rgba(60, 56, 71, 1) 100%
-  );
-
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  background-color: #73ab84;
+  border-radius: 12px 0px 0px 12px;
 }
 
 code {
