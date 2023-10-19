@@ -11,27 +11,23 @@ const AnimePage = () => {
     if (data.length < 1) {
       console.log("new get");
       axios
-        .get(
-          "https://calm-tan-reindeer-slip.cyclic.app/gogoanime/info/" +
-            searchParams.get("id")
+        .get(`${process.env.REACT_APP_API_URL}/anime/zoro/info?id=${searchParams.get("id")}`
         )
         .then((res) => {
           console.log(res.data.episodes);
           setData(res.data);
-          setEpisodes(res.data.episodes.reverse());
+          setEpisodes(res.data.episodes);
         });
     }
   }, []);
 
   function handleClickEpisode(e) {
     axios
-      .get(
-        "https://calm-tan-reindeer-slip.cyclic.app/gogoanime/watch/" +
-          e.currentTarget.id
+      .get(`${process.env.REACT_APP_API_URL}/anime/zoro/watch?episodeId=${e.currentTarget.id}`
       )
       .then((res) => {
         console.log(res.data);
-        setEpisodeURL(res.data.sources[0].file);
+        setEpisodeURL(res.data.sources[0].url);
       });
   }
 
@@ -40,9 +36,9 @@ const AnimePage = () => {
       <div
         id="background"
         className="h-full w-full bg-animeBlack"
-        // style={{
-        //   backgroundImage: `url(${data.animeImg})`,
-        // }}
+      // style={{
+      //   backgroundImage: `url(${data.animeImg})`,
+      // }}
       >
         <div className="flex md:px-24 justify-center h-full w-full ">
           <div
@@ -66,12 +62,12 @@ const AnimePage = () => {
               {episodes.map((episode) => {
                 return (
                   <div
-                    id={episode.episodeId}
-                    key={episode.episodeId}
+                    id={episode.id}
+                    key={episode.id}
                     onClick={handleClickEpisode}
-                    className="bg-transparent text-center text-animeDarkGreen p-2 border-animeLightGreen border-2"
+                    className="hover:bg-white hover:bg-opacity-20 cursor-pointer bg-transparent text-center text-animeDarkGreen p-2 border-animeLightGreen border-2"
                   >
-                    {episode.epNum}
+                    {episode.number}
                   </div>
                 );
               })}
