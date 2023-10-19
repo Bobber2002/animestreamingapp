@@ -61,7 +61,7 @@ const SearchPage = ({ setCurrAnime }) => {
       >
         <div>
           <h1 className="text-6xl font-bold text-animeDarkGreen text-center uppercase">
-            Little peter spider
+            Little peter spider v2
           </h1>
           <br />
           <p className="text-4xl font-bold text-animeDarkGreen text-center uppercase">
