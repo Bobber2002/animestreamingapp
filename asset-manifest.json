@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/animestreamingapp/static/css/main.f4ef386e.css",
-    "main.js": "/animestreamingapp/static/js/main.b461d81e.js",
+    "main.js": "/animestreamingapp/static/js/main.d4bb0b03.js",
     "index.html": "/animestreamingapp/index.html",
     "main.f4ef386e.css.map": "/animestreamingapp/static/css/main.f4ef386e.css.map",
-    "main.b461d81e.js.map": "/animestreamingapp/static/js/main.b461d81e.js.map"
+    "main.d4bb0b03.js.map": "/animestreamingapp/static/js/main.d4bb0b03.js.map"
   },
   "entrypoints": [
     "static/css/main.f4ef386e.css",
-    "static/js/main.b461d81e.js"
+    "static/js/main.d4bb0b03.js"
   ]
 }
